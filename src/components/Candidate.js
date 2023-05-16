@@ -1,17 +1,29 @@
 
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 export default function Candidate(props){
     return(
         <div className="card">
             <img src={props.img} className="card--image"/>
-            <FormControlLabel
-            control={
-              <Checkbox  name={props.name} />
-            }
-            label={props.name}
-          />
+            <table>
+    <tr>
+      <td>
+      {props.name}
+      </td>
+    </tr>
+    <tr>
+      <td class="checkbox">
+      <label className="form-control12">
+            <input
+            type="checkbox"
+            name="candidates"
+            value={props.name}/>
+           
+            </label>
+      </td>
+    </tr>
+  </table>
+           
         </div>
     );
 }
