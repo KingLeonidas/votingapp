@@ -7,14 +7,11 @@ import FormGroup from '@material-ui/core/FormGroup';
 export default function Position(props){
 
     return(
-        <div>
-        <section>
-            <FormControl component="fieldset" variant="standard">
-                <FormLabel component="legend">Select One</FormLabel>
-                <FormGroup className="cards-list">
+        <div className="bob">
+        <section className="Tabs">
+           <div className="cards-list">
        {props.candidates.map(({name,img})=><Candidate name={name} img={img}/>)}
-       </FormGroup>
-       </FormControl>
+       </div>
        </section>
        <br/>
         </div>

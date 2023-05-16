@@ -58,6 +58,7 @@ html,body
 }
 header,footer{
   position:sticky;
+  z-index: 1;
   color:azure;
   width:100%;
 }
@@ -118,30 +119,87 @@ section{
   padding:0px 20px 0px 20px;
 }
 
+.form-control12 {
+  --form-control-color: rebeccapurple;
+
+  font-family: system-ui, sans-serif;
+  font-size: small;
+ margin-top:5px;
+ margin-bottom:5px;
+  line-height: 1.1;
+  display: inline-block;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+}
+
+
+.form-control12 input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font:inherit;
+  font-size:16px;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  flex:none;
+  text-align: center;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+ 
+}
+
+.form-control12 input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.form-control12 input[type="checkbox"]:checked::before {
+  transform: scale(1) !important;
+}
+
 .card{
-  width:100px;
-  font-size:12px;
+  width:110px;
+  
+  color:#33363f;
   flex: 0 0 auto;
   display: flex;
   flex-direction:column;
 }
 .card--image {
   width:100%;
-  border-radius:9px;
+  border-radius:15px;
   display:flex;
+  padding:5px;
+ 
 }
 .cards-list{
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   justify-content: center;
-  row-gap: 15px;
+  row-gap: 20px;
+  
 }
+.cards-text {
+  color:#282c34;
+  
+}
+
+
 .bob{
   width: 100vw;
- min-height:100vh;
   display:flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   overflow-x: auto;
 } 
 
