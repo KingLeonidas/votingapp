@@ -1,3 +1,105 @@
+@charset "UTF-8";
+@-webkit-keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: .33333333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  background: #d8d8d8;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background:  #d8d8d8;
+}
+.option-input:checked {
+  background: #a3a3a3;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  font-size: 26.6666666667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #969696;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+
+
+
 
 
 .App {
@@ -140,7 +242,7 @@ section{
   background-color: #fff;
   margin: 0;
   font:inherit;
-  font-size:16px;
+  font-size:24px;
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
@@ -174,7 +276,9 @@ section{
   flex: 0 0 auto;
   display: flex;
   flex-direction:column;
+  border-radius:10px;
 }
+
 .card--image {
   width:100%;
   border-radius:15px;
