@@ -6,9 +6,6 @@ export default [
                  {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
                  {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
                  {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
-                 {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
-                 {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
-                 {name:'David Farias', img: "http://winnhscomputerscience.net/pictures/74404.jpg"},
                 ]},
 
     {position:"Vice President", 
