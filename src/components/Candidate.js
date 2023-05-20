@@ -14,7 +14,6 @@ export default function Candidate(props){
     </tr>
     <tr>
       <td className="checkbox">
-      
             <input className="option-input checkbox"
             type="checkbox"
             name="candidates"
