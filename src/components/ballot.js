@@ -44,7 +44,7 @@ export default function Ballot() {
         ))}
           </Tabs>
            {positions.map((p) =>(
-            p.position===posValue?<Position title={p.position}/> :null
+            p.position===posValue?<Position key={p.id} title={p.position}/> :null
            ))}
           </Box>
     
