@@ -9,7 +9,12 @@ export default function Candidate(props){
               <tbody>
     <tr>
       <td>
-      {props.name}
+      {props.firstname}
+      </td>
+    </tr>
+    <tr>
+      <td>
+      {props.lastname}
       </td>
     </tr>
     <tr>
@@ -17,7 +22,7 @@ export default function Candidate(props){
             <input className="option-input checkbox"
             type="checkbox"
             name="candidates"
-            value={props.name}/>
+            value={props.img}/>
       </td>
     </tr>
     </tbody>

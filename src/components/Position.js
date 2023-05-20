@@ -22,8 +22,8 @@ export default function Position(props){
         <div className="bob">
         <section className="Tabs">
            <div className="cards-list">
-       {candidates.map(({id,name,picture,position})=>(
-       position===props.title?<Candidate key={id} name={name} img={picture}/>:null))}
+       {candidates.map(({id,firstName,lastName,picture,position})=>(
+       position===props.title?<Candidate key={id} firstname={firstName} lastname={lastName} img={picture}/>:null))}
        </div>
        </section>
        <br/>
