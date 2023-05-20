@@ -94,7 +94,7 @@ footer{
   background-color:  #33363f;
   font-size:small;
   padding:0px;
-  height: 5vh;
+  min-height: 5vh;
 }
 main{
   scroll-margin-top:8rem;
@@ -110,25 +110,25 @@ main{
 .nav-items{
   list-style:none;
   display:flex;
-  font-size:calc(10px + 2vmin);;
+  font-size:calc(0.7rem + 2vmin);;
   align-items:center;
 }
 
 
 section{
-  padding:0px 20px 0px 20px;
+  padding:0px 1.2rem 0px 1.2rem;
 }
 
 .form-control12 {
   --form-control-color: rebeccapurple;
   font-family: system-ui, sans-serif;
-  font-size: small;
+  font-size: 0.5rem;
  margin-top:5px;
  margin-bottom:5px;
   line-height: 1.1;
   display: inline-block;
   align-items: center;
-  gap: 10px;
+  gap: 0.7rem;
   text-align: center;
 
 }
@@ -140,7 +140,7 @@ section{
   background-color: #fff;
   margin: 0;
   font:inherit;
-  font-size:16px;
+  font-size:1rem;
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
@@ -156,8 +156,8 @@ section{
 
 .form-control12 input[type="checkbox"]::before {
   content: "";
-  width: 0.65em;
-  height: 0.65em;
+  width: .65em;
+  height: .65em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
@@ -177,16 +177,16 @@ section{
 }
 .card--image {
   width:100%;
-  border-radius:15px;
+  border-radius:0.95rem;
   display:flex;
   padding:5px;
  
 }
 .cards-list{
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(6.875rem, 1fr));
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 1.25rem;
   
 }
 .cards-text {
@@ -205,7 +205,7 @@ section{
 .Tabs {
   width: 100%;
   height: auto;
-  min-height: 400px;
+  min-height: 25rem;
   background: #053742;
   margin: 0px auto 1.5rem;
   padding: 2rem 1rem;

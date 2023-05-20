@@ -4,13 +4,25 @@ import "../App.css";
 import Box from "@material-ui/core/Box";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from "axios";
 
 
 export default function Ballot() {
-  const positions=Data;
-  const position =Data[0].position;
-  const [posValue, setPosValue] = React.useState(position);
+  const [positions, setPositions]=useState([]);
+  const [posValue,setPosValue] =useState("");
+
+  useEffect(() => {
+    loadPositions();
+  },[]);
+
+  const loadPositions = async() =>{
+    const result = await axios.get("http://localhost:8080/position/getAll");
+   setPositions(result.data);
+   setPosValue(result.data[0].position)
+  }
+
+
 
     return (
       
@@ -20,19 +32,19 @@ export default function Ballot() {
           textColor="primary"
           indicatorColor="primary"
           variant="scrollable"
-          scrollButtons="true"
-           allowScrollButtonsMobile
+          scrollButtons="on"
+         
           aria-label="scrollable force tabs example"
           onChange={(event, newValue) => {
             setPosValue(newValue);
           }}
         >
            {positions.map((p) => (
-          <Tab label={p.position} value={p.position} />
+          <Tab key={p.id} label={p.position} value={p.position} />
         ))}
           </Tabs>
            {positions.map((p) =>(
-            p.position===posValue?<Position title={p.position} candidates={p.candidates}/> :null
+            p.position===posValue?<Position title={p.position}/> :null
            ))}
           </Box>
     
