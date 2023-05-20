@@ -16,6 +16,9 @@ export default function Candidate(props){
       <td className="checkbox">
       <label className="form-control12">
             <input
+      <td>
+      <label>
+            <input className="option-input checkbox"
             type="checkbox"
             name="candidates"
             value={props.name}/>
