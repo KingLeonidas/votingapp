@@ -1,5 +1,4 @@
 import Position from './Position'
-import Data from "../data"
 import "../App.css";
 import Box from "@material-ui/core/Box";
 import Tab from "@material-ui/core/Tab";
