@@ -242,7 +242,7 @@ section{
   background-color: #fff;
   margin: 0;
   font:inherit;
-  font-size:24px;
+  font-size:1.4rem;
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
@@ -257,7 +257,7 @@ section{
 }
 
 .form-control12 input[type="checkbox"]::before {
-  content: "";
+  content: "Vote For Me";
   width: 0.65em;
   height: 0.65em;
   transform: scale(0);
@@ -290,7 +290,7 @@ section{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 1.2rem;
   
 }
 .cards-text {
