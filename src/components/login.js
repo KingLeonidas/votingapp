@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {GoogleButton} from 'react-google-button';
 import "./login.css"
 import { UserAuth } from "../context/AuthContext";
@@ -7,7 +7,14 @@ import {useNavigate } from "react-router-dom";
 export default function Login() {
 
     const {googleSignIn,user}=UserAuth();
-    const navigate =useNavigate();
+    const navigateTo =useNavigate();
+
+    const [popupStyle, showPopup] = useState("hide")
+
+    const popup = () => {
+        showPopup("login-popup")
+        setTimeout(() => showPopup("hide"), 3000)
+    }
    
 
     const handleGoogleSignIn =async() =>{
@@ -20,18 +27,26 @@ export default function Login() {
     };
 
     useEffect(()=>{
-        console.log(user);
         if(user !=null){
-           navigate('/home');
+           navigateTo('/home');
         }
     },[user] );
 
     return (
         <div className="page">
             <div className="cover">
-            <h1>Login</h1>
+                <form>
+            <h2>Sign In</h2>
+            
+            <input type="text" placeholder="username" />
+            <input type="password" placeholder="password" />
+
+            <div className="login-btn" onClick={popup}>Login</div>
+
+            <p className="text">Or login using</p>
+            </form>
             <div>
-               <GoogleButton onClick={handleGoogleSignIn}/>
+               <GoogleButton type="light" onClick={handleGoogleSignIn}/>
             </div>
             </div>
         </div>

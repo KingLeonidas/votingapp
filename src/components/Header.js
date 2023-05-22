@@ -1,5 +1,4 @@
 import logo from '../images/logo.png'; 
-import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import React from 'react';
 import '../App.css';

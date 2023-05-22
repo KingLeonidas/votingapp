@@ -22,7 +22,6 @@ export default function Ballot() {
       querySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(),id: doc.id });
       });
-      console.log(messages);
       setPositions(messages);
       setPosValue(messages[0].position);
     });

@@ -5,7 +5,7 @@ export default function Candidate(props){
     return(
         <div className="card" >
             <img src={`https://winnhscomputerscience.net/pictures/${props.img}.jpg`} className="card--image"/>
-            <table>
+            <table className="tableCard">
               <tbody>
     <tr>
       <td>
