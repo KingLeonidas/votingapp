@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 import { db } from '../firebase';
 import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
 
@@ -17,7 +16,7 @@ export default function Ballot() {
 
 
   useEffect(() => {
-    const q = query(collection(db, 'positions'));
+    const q = query(collection(db, 'positions'), orderBy('position_value'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
       querySnapshot.forEach((doc) => {
@@ -25,7 +24,7 @@ export default function Ballot() {
       });
       console.log(messages);
       setPositions(messages);
-      setPosValue(messages[0]);
+      setPosValue(messages[0].position);
     });
     return () => unsubscribe();
   }, []);
@@ -39,12 +38,12 @@ export default function Ballot() {
         <Box>
           <Tabs className="box"
           value={posValue}
-          textColor="primary"
-          indicatorColor="primary"
+          textColor="secondary"
+          indicatorColor="secondary"
           variant="scrollable"
-          scrollButtons="auto"
-         
-          aria-label="scrollable force tabs example"
+          scrollButtons
+          allowScrollButtonsMobile
+          aria-label="scrollable secondary force tabs example"
           onChange={(event, newValue) => {
             setPosValue(newValue);
           }}
