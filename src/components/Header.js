@@ -6,11 +6,11 @@ import React from 'react';
 
 export default function Header(props){
 
-    const {user,logout}=UserAuth();
+    const {user,logOut}=UserAuth();
 
     const handleSignOut = async()=>{
         try{
-            await logout();
+            await logOut();
         }
         catch(error){
             console.log(error)
