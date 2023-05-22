@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {GoogleButton} from 'react-google-button';
 import "./login.css"
 import { UserAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 export default function Login() {
 
     const {googleSignIn,user}=UserAuth();
     const navigate =useNavigate();
+   
 
     const handleGoogleSignIn =async() =>{
         try{
@@ -19,21 +20,20 @@ export default function Login() {
     };
 
     useEffect(()=>{
+        console.log(user);
         if(user !=null){
-            navigate('/home');
+           navigate('/home');
         }
     },[user] );
 
     return (
-        <div className="cover">
+        <div className="page">
+            <div className="cover">
             <h1>Login</h1>
-           
-            <div className="alt-login">
+            <div>
                <GoogleButton onClick={handleGoogleSignIn}/>
             </div>
-
-           
-            
+            </div>
         </div>
     )
 }

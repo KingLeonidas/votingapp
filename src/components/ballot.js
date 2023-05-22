@@ -5,21 +5,32 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import { db } from '../firebase';
+import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
 
 
 export default function Ballot() {
+
   const [positions, setPositions]=useState([]);
   const [posValue,setPosValue] =useState("");
+ 
+
 
   useEffect(() => {
-    loadPositions();
-  },[]);
+    const q = query(collection(db, 'positions'));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let messages = [];
+      querySnapshot.forEach((doc) => {
+        messages.push({ ...doc.data(),id: doc.id });
+      });
+      console.log(messages);
+      setPositions(messages);
+      setPosValue(messages[0]);
+    });
+    return () => unsubscribe();
+  }, []);
 
-  const loadPositions = async() =>{
-    const result = await axios.get("http://localhost:8080/position/getAll");
-   setPositions(result.data);
-   setPosValue(result.data[0].position)
-  }
+  
 
 
 
@@ -31,7 +42,7 @@ export default function Ballot() {
           textColor="primary"
           indicatorColor="primary"
           variant="scrollable"
-          scrollButtons="on"
+          scrollButtons="auto"
          
           aria-label="scrollable force tabs example"
           onChange={(event, newValue) => {

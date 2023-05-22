@@ -5,15 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/login'
 import {Routes,Route} from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
+import Protected from './components/Protected';
 
 export default function App() {
   return (
-    <div className="App">
+    <div>
       <AuthContextProvider>
         <Header />
       <Routes>
-        <Route path='/home' element ={<Ballot/>}/>
-        <Route path='/' element ={<Login/>}/>
+      <Route exact path='/' element ={<Login/>}/>
+      <Route exact path='/home' element ={<Protected><Ballot/></Protected>}/>
       </Routes>
       <footer> © Copyrighted 2023 Jose Jimenez. All Rights Reserved.</footer>
       </AuthContextProvider>

@@ -157,11 +157,13 @@ html,body
   background-color: #33363f;
   color:azure;
   height: 80px;
-  justify-content:space-between;
+  width:100%;
+  justify-content:center;
   align-items:center;
   padding: 10px 36px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0,0,0,0.1);
 }
+
 header,footer{
   position:sticky;
   z-index: 1;
@@ -199,8 +201,10 @@ footer{
   bottom:0px;
   background-color:  #33363f;
   font-size:small;
-  padding:0px;
-  min-height: 5vh;
+  padding:.7rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 main{
   scroll-margin-top:8rem;

@@ -2,6 +2,7 @@ import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import React from 'react';
+import '../App.css';
 
 
 export default function Header(props){
@@ -19,13 +20,13 @@ export default function Header(props){
 
     return (
      <div>
-            <nav className ="nav">
+            <div className ="nav">
                 <img src={logo} alt="" className="nav-logo"/>
                 <div className="nav-items">
                     Winn HS Voting App
                 </div>
-              {user?.displayName?<button onClick={handleSignOut}>Logout</button>:<Link to='/'>Log In</Link>}
-            </nav>
+              {user?.displayName?<button onClick={handleSignOut}>Logout</button>:null}
+            </div>
             <div className="Title">
            {props.title}
             </div>
