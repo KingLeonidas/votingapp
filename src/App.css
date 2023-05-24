@@ -97,7 +97,9 @@
   z-index: 100;
 }
 
-
+.tableCard{
+  text-align:center;
+}
 
 
 
@@ -152,6 +154,12 @@ html,body
     overflow-x: hidden; 
 }
 
+.header{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
 .nav{
   display:flex;
   background-color: #33363f;
@@ -186,9 +194,10 @@ html{
 
 .Title{
   background-color:azure;
-  font-size:x-large;
+  font-size:1.4em;
   font-weight:bold;
   color:black;
+  align-self: center;
 }
 
 .forms{
@@ -210,6 +219,16 @@ main{
   scroll-margin-top:8rem;
 }
 
+.mainbody{
+  margin:0px 0px 0px 0px;
+}
+
+.titleofvote{
+  
+  text-align: center;
+  font-size:.8rem;
+}
+
 
 .nav-logo {
   width:60px;
@@ -217,11 +236,22 @@ main{
   margin:0px 0px 0px 10px;
 }
 
+.apptitle{
+  font-size:1.5rem;
+}
+
 .nav-items{
   list-style:none;
   display:flex;
-  font-size:calc(0.7rem + 2vmin);;
+  flex-direction:row;
+flex-wrap:nowrap;
+  font-size:calc(2.5vmin);;
   align-items:center;
+  justify-content:space-around;
+}
+
+.infotable{
+  display:table;
 }
 
 
@@ -239,7 +269,20 @@ section{
   border-radius:10px;
   align-items:center;
   justify-content: center;
+  text-align:center;
 }
+
+.userPic{
+  border-radius:40px;
+  width:2.5rem;
+  padding:5px;
+  border-style:solid;
+  border-color:#E8F0F2;
+  border-width:2px;
+  margin:5px;
+  overflow: clip;
+}
+
 
 td{
   align-items:center;

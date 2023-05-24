@@ -8,6 +8,8 @@ import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 
 export default function App() {
+
+  
   return (
     <div>
       <AuthContextProvider>
@@ -16,7 +18,7 @@ export default function App() {
       <Route exact path='/' element ={<Login/>}/>
       <Route exact path='/home' element ={<Protected><Ballot/></Protected>}/>
       </Routes>
-      <footer> © Copyrighted 2023 Jose Jimenez. All Rights Reserved.</footer>
+      
       </AuthContextProvider>
       
     </div>

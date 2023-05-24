@@ -6,13 +6,21 @@ import Tabs from "@mui/material/Tabs";
 import React, {useEffect, useState} from 'react';
 import { db } from '../firebase';
 import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
-
+import { UserAuth } from '../context/AuthContext';
 
 export default function Ballot() {
 
   const [positions, setPositions]=useState([]);
   const [posValue,setPosValue] =useState("");
- 
+  const {user,logOut}=UserAuth();
+  const handleSignOut = async()=>{
+      try{
+          await logOut();
+      }
+      catch(error){
+          console.log(error)
+      }
+  };
 
 
   useEffect(() => {
@@ -33,8 +41,13 @@ export default function Ballot() {
 
 
     return (
-      
-        <Box>
+      <div>
+        <Box className="mainbody">
+          <div className="titleofvote">
+            <div className="Title">
+           NHS OFFICER ELECTIONS
+            </div>
+            </div>
           <Tabs className="box"
           value={posValue}
           textColor="secondary"
@@ -55,7 +68,10 @@ export default function Ballot() {
             p.position===posValue?<Position key={p.id} title={p.position}/> :null
            ))}
           </Box>
+          <div> <button onClick={handleSignOut}>Logout</button></div>
+    <footer> © Copyrighted 2023 Jose Jimenez. All Rights Reserved.</footer>
     
+    </div>
     
     );
   }

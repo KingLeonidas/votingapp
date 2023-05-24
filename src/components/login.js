@@ -34,18 +34,20 @@ export default function Login() {
 
     return (
         <div className="page">
+            <h2>Log in</h2>
             <div className="cover">
                 <form>
-            <h2>Sign In</h2>
-            
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
+            <div className="userInfo">
+            <span>Email address</span>
+            <input className="userInput" type="text" placeholder="Email address" />
+            <span>Password</span>
+            <input className="userInput" type="password" placeholder="Password" />
 
-            <div className="login-btn" onClick={popup}>Login</div>
-
-            <p className="text">Or login using</p>
+            <div className="login-btn" onClick={popup}>Log in</div>
+            </div>
             </form>
             <div>
+            <div className="text-divider">OR</div>
                <GoogleButton type="light" onClick={handleGoogleSignIn}/>
             </div>
             </div>

@@ -2,33 +2,23 @@ import logo from '../images/logo.png';
 import { UserAuth } from '../context/AuthContext';
 import React from 'react';
 import '../App.css';
-
+import Info from './info'
 
 export default function Header(props){
 
-    const {user,logOut}=UserAuth();
+    const {user}=UserAuth();
 
-    const handleSignOut = async()=>{
-        try{
-            await logOut();
-        }
-        catch(error){
-            console.log(error)
-        }
-    };
-
+  
     return (
-     <div>
+     <div className="header">
             <div className ="nav">
-                <img src={logo} alt="" className="nav-logo"/>
-                <div className="nav-items">
+                <img src={logo} alt="" className="nav-logo nav-items"/>
+                <div className="nav-items apptitle">
                     Winn HS Voting App
                 </div>
-              {user?.displayName?<button onClick={handleSignOut}>Logout</button>:null}
+            <div className="nav-items">{user?.displayName?<Info/>:null}</div>
             </div>
-            <div className="Title">
-           {props.title}
-            </div>
+            
             </div>
     );
 }

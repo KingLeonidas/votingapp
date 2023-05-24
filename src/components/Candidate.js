@@ -1,4 +1,4 @@
-
+import "../App.css"
 
 
 export default function Candidate(props){
@@ -13,7 +13,7 @@ export default function Candidate(props){
       </td>
     </tr>
     <tr>
-      <td>
+      <td >
       {props.lastname}
       </td>
     </tr>
