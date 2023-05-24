@@ -20,7 +20,7 @@ export default function App() {
       </Routes>
       
       </AuthContextProvider>
-      
+      <footer> © Copyrighted 2023 Jose Jimenez. All Rights Reserved.</footer>
     </div>
   );
 }

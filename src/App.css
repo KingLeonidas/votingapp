@@ -1,3 +1,5 @@
+
+
 @charset "UTF-8";
 @-webkit-keyframes click-wave {
   0% {
@@ -152,6 +154,7 @@ html,body
     height: 100%;
     padding: 0px;
     overflow-x: hidden; 
+    
 }
 
 .header{
@@ -160,33 +163,49 @@ html,body
   align-items: center;
 }
 
-.nav{
+nav{
   display:flex;
   background-color: #33363f;
   color:azure;
   height: 80px;
   width:100%;
-  justify-content:space-between;
+ 
   align-items:center;
-  padding: 10px 36px;
+  padding: 10px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0,0,0,0.1);
-}
-
-header,footer{
+  top:0px;
   position:sticky;
   z-index: 1;
   color:azure;
   width:100%;
 }
 
+.nav--logo_text, .nav--info_text{
+  margin:0;
+  color:#d8d8d8;
+
+}
+
+.nav--info_text{
+  font-size:3vmin;
+}
+
+.nav--logo_text{
+  margin-right:auto;
+  font-size:3vmin;
+}
+
+.nav--logo{
+  width:3rem;
+  margin-right:7px;
+}
+
+
 
 .box{
   padding:0px 0px 15px 0px;
 }
-header{
-  top:0px;
- 
-}
+
 html{
   scroll-behavior: smooth;
 }
@@ -210,17 +229,18 @@ footer{
   bottom:0px;
   background-color:  #33363f;
   font-size:small;
+  color:#d8d8d8;
   padding:.7rem;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 main{
-  scroll-margin-top:8rem;
+  scroll-margin-top:2rem;
 }
 
 .mainbody{
-  margin:0px 0px 0px 0px;
+  margin:10px 0px 0px 0px;
 }
 
 .titleofvote{
@@ -237,7 +257,7 @@ main{
 }
 
 .apptitle{
-  font-size:1.5rem;
+  align-items: center;
 }
 
 .nav-items{
@@ -245,8 +265,9 @@ main{
   display:flex;
   flex-direction:row;
 flex-wrap:nowrap;
-  font-size:calc(2.5vmin);;
+  font-size:4vmin;
   align-items:center;
+  
   justify-content:space-around;
 }
 
@@ -388,5 +409,39 @@ td{
   display: block;
   font-size: 2rem;
   text-align: center;
+}
+
+
+.dropDownProfile{
+position:absolute;
+color:black;
+top:5rem;
+right:0.5rem;
+width:90px;
+padding:15px;
+border-radius:8px;
+background-color:white;
+border: 1px solid gray;
+
+
+}
+
+.dropDownProfile::before{
+  content:'';
+  position:absolute;
+  top:-0.7rem;
+  right: 1.1rem;
+  width:20px;
+  height:20px;
+  transform: rotate(45deg);
+  background-color:white;
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+
+}
+
+.logoutbutton{
+  border-width:0px;
+  background-color: white;
 }
 

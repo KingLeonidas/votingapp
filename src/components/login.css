@@ -14,8 +14,8 @@
 
 .cover {
     background-color: white;
-    width: 80%;
-    padding:20px;
+    width: 100%;
+    padding:1.5rem;
  
     border-radius: 1em;
     box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);

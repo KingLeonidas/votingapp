@@ -3,22 +3,27 @@ import { UserAuth } from '../context/AuthContext';
 import React from 'react';
 import '../App.css';
 import Info from './info'
+import DropDownProfile from './DropDownProfile';
 
 export default function Header(props){
 
-    const {user}=UserAuth();
+    const {user,logOut}=UserAuth();
+  const handleSignOut = async()=>{
+      try{
+          await logOut();
+      }
+      catch(error){
+          console.log(error)
+      }
+  };
 
   
     return (
-     <div className="header">
-            <div className ="nav">
-                <img src={logo} alt="" className="nav-logo nav-items"/>
-                <div className="nav-items apptitle">
-                    Winn HS Voting App
-                </div>
-            <div className="nav-items">{user?.displayName?<Info/>:null}</div>
-            </div>
-            
-            </div>
+            <nav>
+                <img src={logo} alt="winnhs" className="nav--logo"/>
+                <div className="nav--logo_text">Winn HS Voting App</div>
+                   <div className="nav--info-text">{user?.displayName?<Info/>:null} </div>
+          
+            </nav>
     );
 }
