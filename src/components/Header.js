@@ -3,19 +3,12 @@ import { UserAuth } from '../context/AuthContext';
 import React from 'react';
 import '../App.css';
 import Info from './info'
-import DropDownProfile from './DropDownProfile';
+
 
 export default function Header(props){
 
-    const {user,logOut}=UserAuth();
-  const handleSignOut = async()=>{
-      try{
-          await logOut();
-      }
-      catch(error){
-          console.log(error)
-      }
-  };
+    const {user}=UserAuth();
+ 
 
   
     return (

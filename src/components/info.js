@@ -2,20 +2,16 @@ import { UserAuth } from '../context/AuthContext';
 import '../App.css';
 import DropDownProfile from './DropDownProfile';
 import { useState } from 'react';
+import { BiChevronDown } from "react-icons/bi";
 
 export default function Info(){
 
-    const {user,logOut}=UserAuth();
+    const {user}=UserAuth();
     const [openProfile,setOpenProfile]=useState(false);
 
-    const handleSignOut = async()=>{
-        try{
-            await logOut();
-        }
-        catch(error){
-            console.log(error)
-        }
-    };
+    let firstName =String(user.displayName);
+    firstName =firstName.substring(0,firstName.indexOf(" "));
+
 
     const toggleIsLoading = () => {
         // 👇️ passed function to setState
@@ -28,7 +24,7 @@ export default function Info(){
     return(
         <div>
         <div className="nav--info_text">
-           Hi, {user.displayName} <img onClick={toggleIsLoading} className="userPic" src={user.photoURL} />
+           Hi, {firstName} <img className="userPic" src={user.photoURL} /><BiChevronDown onClick={toggleIsLoading}/>
         </div>
         {openProfile && <DropDownProfile/>}
         </div>

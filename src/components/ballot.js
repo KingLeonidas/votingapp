@@ -53,11 +53,11 @@ export default function Ballot() {
           }}
         >
            {positions.map((p) => (
-          <Tab key={p.id} label={p.position} value={p.position} />
+          <Tab key={p.id} label={p.position} value={p.position}  />
         ))}
           </Tabs>
            {positions.map((p) =>(
-            p.position===posValue?<Position key={p.id} title={p.position}/> :null
+            p.position===posValue?<Position key={p.id} title={p.position} seats={p.seats_available}/> :null
            ))}
           </Box>
          

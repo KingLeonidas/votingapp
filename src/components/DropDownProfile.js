@@ -1,5 +1,7 @@
 import { UserAuth } from '../context/AuthContext';
 import '../App.css'
+import { BiLogOut } from "react-icons/bi";
+
 
 export default function DropDownProfile(){
 
@@ -18,7 +20,7 @@ export default function DropDownProfile(){
 return(
     <div className="flex flex-col dropDownProfile">
 
-    <button type="button" className="logoutbutton" onClick={handleSignOut}>Logout</button>
+<BiLogOut/><button type="button" className="logoutbutton" onClick={handleSignOut}>Sign Out</button>
 
     </div>
 )

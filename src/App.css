@@ -82,9 +82,11 @@
   height: 40px;
   width: 40px;
   position: absolute;
-  content: "";
+  content: "✖️";
   display: inline-block;
-  font-size: 26.6666666667px;
+  font-size: 30px;
+  font-weight:bold;
+  
   text-align: center;
   line-height: 40px;
 }
@@ -192,7 +194,7 @@ nav{
 
 .nav--logo_text{
   margin-right:auto;
-  font-size:3vmin;
+  font-size:4vmin;
 }
 
 .nav--logo{
@@ -295,7 +297,7 @@ section{
 
 .userPic{
   border-radius:40px;
-  width:2.5rem;
+  width:2.7rem;
   padding:5px;
   border-style:solid;
   border-color:#E8F0F2;
@@ -417,8 +419,9 @@ position:absolute;
 color:black;
 top:5rem;
 right:0.5rem;
-width:90px;
-padding:15px;
+width:105px;
+height:45px;
+padding:5px;
 border-radius:8px;
 background-color:white;
 border: 1px solid gray;

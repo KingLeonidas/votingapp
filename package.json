@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "env-cmd": "^10.1.0",
     "firebase": "^9.22.0",
     "jquery": "^3.7.0",
@@ -19,6 +20,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-google-button": "^0.7.2",
+    "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "^5.0.1",
     "react-tabs": "^6.0.1",
@@ -47,8 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
   }
 }
