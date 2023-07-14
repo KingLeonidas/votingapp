@@ -40,7 +40,7 @@ export default function Position(props){
         <section className="Tabs">
            <div className="cards-list">
        {candidates.map(({id,firstname,lastname,picture},index)=>(
-       <Candidate key={id} seats={props.seats} index={index} firstname={firstname} lastname={lastname} img={picture} checked={checked} checkChange={checkChange}/>:null))}
+       <Candidate key={id} seats={props.seats} index={index} firstname={firstname} lastname={lastname} img={picture} checked={checked} checkChange={checkChange}/>))}
        </div>
        </section>
        <br/>
