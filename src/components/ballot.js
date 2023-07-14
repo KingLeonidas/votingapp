@@ -13,8 +13,6 @@ export default function Ballot() {
   const [positions, setPositions]=useState([]);
   const [posValue,setPosValue] =useState("");
  
-
-
   useEffect(() => {
     const q = query(collection(db, 'positions'), orderBy('position_value'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -27,10 +25,6 @@ export default function Ballot() {
     });
     return () => unsubscribe();
   }, []);
-
-  
-
-
 
     return (
       <div>
